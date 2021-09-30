@@ -158,6 +158,11 @@ position: relative;
     width:100%;
     background-color:#d8d8d8;
 }
+.format{
+    display:grid;
+    grid-template-columns:1fr;
+
+}
 @media screen and (min-width:768px){
 .format{
     display:grid;

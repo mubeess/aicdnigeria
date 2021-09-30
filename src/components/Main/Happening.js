@@ -6,6 +6,7 @@ const StyledHap=styled.div`
    position:relative;
    box-shadow:0px 0px 2px rgba(0,0,0,0.5);
    margin:20px;
+   min-height: 200px;
    h1{
        font-size:150px;
        opacity: 0.2;
@@ -14,9 +15,13 @@ const StyledHap=styled.div`
        position:absolute;
        bottom:0;
        right: 0;
+       top:0;
        font-weight:bold;
        color:rgba(0,0,0,0.7);
-       font-size: 20px;
+       font-size: 15px;
+       text-align: justify;
+       margin-right: 20px;
+       margin-left: 20px;
 
    }
   
