@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const StyledFooter=styled.div`
 width:100%;
 min-height:300px;
-background:linear-gradient(to right,black,lightblue);
+background-color:#161e35;
 margin-top: 20px;
 display:grid;
 grid-template-columns:1fr;
@@ -34,6 +34,10 @@ div{
         margin: 30px;
         cursor: pointer;
     }
+}
+@media screen and (min-width:800px){
+display: grid;
+grid-template-columns: 1fr 1fr;
 }
 `;
 

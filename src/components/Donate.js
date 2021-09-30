@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import styled from 'styled-components'
 import { usePaystackPayment } from 'react-paystack';
-import {MenuFoldOutlined,HeartFilled,AlertFilled} from '@ant-design/icons'
+import {MenuFoldOutlined,HeartFilled,AlertFilled, CloseCircleFilled} from '@ant-design/icons'
 import Modal from '@material-ui/core/Modal';
 const StyledMod=styled.div`
 width: 85%;
@@ -27,7 +27,7 @@ export default function Donate(props) {
     const [name,setName]=React.useState('');
     const [phone,setPhone]=React.useState('');
     const [amount,setAmount]=React.useState('');
-
+    const [paid,setPaid]=React.useState(false)
     const config = {
         reference: (new Date()).getTime(),
         email: email,
@@ -39,7 +39,8 @@ export default function Donate(props) {
 
     const onSuccess = (reference) => {
         // Implementation for whatever you want to do with reference and after success call.
-       alert('payment succesful')
+        setPaid(true)
+    
       };
     
       // you can call this function anything
@@ -59,12 +60,25 @@ export default function Donate(props) {
     return (
         <Modal
         open={props.open}
-        onClose={props.handleClose}
+        onClose={()=>{
+          return null
+        }}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-      <StyledMod>
-      <Typography align='center' gutterBottom variant="h6" component="h2">
+         <StyledMod>
+          <CloseCircleFilled onClick={()=>{
+             setPaid(false)
+             setName('')
+             setAmount('')
+             setEmail('')
+             setPhone('')
+             props.handleClose()
+          }} style={{marginLeft:'80%',marginTop:'20px'}}></CloseCircleFilled>
+          {
+              !paid&&(
+                  <>
+                   <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
           Kindly Donate<HeartFilled></HeartFilled>
           </Typography>
           <TextField size='small' required onChange={(e)=>{
@@ -100,6 +114,31 @@ export default function Donate(props) {
       >
         Proceed To Donation!!!
       </Button>
+                  
+                  </>
+              )
+          }
+     
+      {
+          paid&&( 
+              <div>
+         <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+          Payment Acknowledged<HeartFilled></HeartFilled>
+          </Typography> 
+          <Typography style={{marginTop:'20px',fontWeight:'lighter'}} align='center' gutterBottom variant="h3" component="h2">
+          Recieved the amount of {amount/100}, from {name} 
+          </Typography> 
+          <Button onClick={()=>{
+               setName('')
+               setAmount('')
+               setEmail('')
+               setPhone('')
+               setPaid(false)
+               props.handleClose()
+          }} variant='contained' color='primary' style={{marginLeft:'25%'}}>{'<<'}Back To Home</Button>
+              </div>
+          )
+      }
       </StyledMod>
       </Modal>
     )

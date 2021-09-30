@@ -22,6 +22,12 @@ img{
     right: 0;
     
 }
+@media screen and (min-width:800px){
+min-height: 100vh;
+img{
+  height:100vh;
+}
+}
 `;
 const StyledCar=styled.div`
 width:100%;

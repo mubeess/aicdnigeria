@@ -83,6 +83,19 @@ img{
   
 }
 
+
+@media screen and (min-width:768px){
+img{
+    height: 150vh;
+}
+.under{
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.4),rgba(0,0,0,0.6),rgba(0,0,0,0.8),rgba(0,0,0,0.9));
+}
+}
+
+
+
+
 `;
 const StyledWrite=styled.div`
 min-height: 50vh;
@@ -102,6 +115,16 @@ p{
     margin-right:20px;
     text-align:justify;
     font-size:18px;
+}
+@media screen and (min-width:768px){
+min-height: 30vh;
+h1{
+    text-align: center;
+    font-size: 30px;
+}
+p{
+    font-size: 22px;
+}
 }
 
 `;
@@ -134,6 +157,12 @@ position: relative;
     min-height:80vh;
     width:100%;
     background-color:#d8d8d8;
+}
+@media screen and (min-width:768px){
+.format{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
 }
 `;
 const StyledHappening=styled.div`
@@ -194,6 +223,11 @@ export default function Main() {
   };
 
   const handleClose = () => {
+    setName('')
+    setAmount('')
+    setEmail('')
+    setPhone('')
+    setPaid(false)
     setOpen(false);
   };
     return (
@@ -208,7 +242,7 @@ export default function Main() {
             <img src={Child} alt='child'></img> 
             </StyledCover>
            <StyledWrite>
-            <h1>Our beleive @ Africa Initiative for Children With Disabilities(AICD).Disability is in the mind not in the body</h1>
+            <h1>Our beleive @ Africa Initiative for Children With Disabilities(AICD).Disability is in the mind not on the body</h1>
             <p>
             Disabled and Vulnerable children should also be inclusive in all activities both 
             academics and participation to have easy access to resources just like the normal 
@@ -220,13 +254,16 @@ export default function Main() {
         <AlertFilled></AlertFilled>
         What's happening
       </Typography>
-      
+      <div className='format'>
       {
           happeningContent.map((cont,ind)=>(
               <Happening content={cont.content} num={ind+1} key={ind}></Happening>
+              
           ))
       }
+      </div>
        <Button
+       onClick={handleOpen}
         variant='contained'
         endIcon={<HeartFilled></HeartFilled>}
         color='primary'
@@ -315,7 +352,7 @@ export default function Main() {
         <Covid></Covid>
         <Footer></Footer>
         </Fade>
-        <Popup></Popup>
+        <Popup open={handleOpen}></Popup>
         <Modal
         open={open}
         onClose={()=>{
@@ -376,6 +413,17 @@ export default function Main() {
          <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
           Payment Acknowledged<HeartFilled></HeartFilled>
           </Typography> 
+          <Typography style={{marginTop:'20px',fontWeight:'lighter'}} align='center' gutterBottom variant="h3" component="h2">
+          Recieved the amount of N{amount/100}, from {name} 
+          </Typography> 
+          <Button onClick={()=>{
+               setName('')
+               setAmount('')
+               setEmail('')
+               setPhone('')
+               setPaid(false)
+               setOpen(false);
+          }} variant='contained' color='primary' style={{marginLeft:'25%'}}>{'<<'}Back To Home</Button>
               </div>
           )
       }

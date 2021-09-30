@@ -43,13 +43,16 @@ h4{
     cursor: pointer;
 }
 `;
-export default function Popup() {
+export default function Popup(props) {
     const [visible,setVisible]=useState(true);
     const Popping=()=>{
         return(
             <StyledPop>
             <h4>Kindly Donate to put smile on the faces of vulnerables and disabled children nationwide</h4>
             <Button
+            onClick={()=>{
+                props.open()
+            }}
             style={{width:'190px'}}
              variant='contained'
              color='secondary'

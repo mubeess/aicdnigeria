@@ -26,7 +26,7 @@ margin-top: 85px;
 }
 
 `;
-export default function About() {
+export default function Contact() {
 const [open,setOpen]=useState(false)
   const handleOpen = () => {
     setOpen(true);
@@ -42,18 +42,23 @@ useEffect(() => {
             <Nav handleOpen={handleOpen}></Nav>
             <Donate open={open} handleClose={handleClose}></Donate>
             <div className='jumbo'>
-            <h2>ABOUT US</h2>
+            <h2>Contact US</h2>
             </div>
             <div className='main'>
-                <Typography style={{textAlign:'justify',marginRight:'20px',marginLeft:'20px'}} variant='body1'>
-                The AFRICA INITIATIVE FOR CHILDREN WITH DISABILITIES is a 
-                civil association regulated by private law, without economic 
-                interest or political affiliation, without discrimination in 
-                terms of race, sex, social condition, religious beliefs, with 
-                autonomy regarding its administration, finances and assets, which 
-                will be governed through the provisions of its Statute and the applicable
-                 legislation of the association.
+                <Typography align='center' variant='h4'>
+                For More Enquiries, Contact Us Via The Following !!!
                 </Typography>
+
+                <Typography align='center' variant='h6'>
+                ☛ phone:+2349068946796 
+                </Typography>
+                <Typography align='center' variant='h6'>
+                ☛ email:aicdnigeria@gmail.com 
+                </Typography>
+                <Typography align='center' variant='h6'>
+                ☛ website:www.aicdnigeria.org 
+                </Typography>
+                
             </div>
         </StyledAbout>
     )

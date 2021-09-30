@@ -21,7 +21,6 @@ margin-bottom: 30px;
 `;
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
       marginTop:20
     },
     media: {

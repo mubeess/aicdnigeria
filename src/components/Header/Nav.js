@@ -66,9 +66,25 @@ top:0;
        margin-left:13px;
        cursor: pointer;
        color:black;
+     
     }
+    @media screen and (min-width:768px){
+      .menu svg{
+       margin-left:90px ;
+       cursor: pointer;
+       
+     
+    }
+  }
+
     
 }
+/* @media screen and (min-width:1118px){
+      .btnWrapper{
+       margin-left:800px ;
+         
+    }
+  } */
 `;
 
 
@@ -82,6 +98,7 @@ top:0;
           <span>aicdnigeria.org</span>
           </div>
           <div className='aside'>
+        <div className='btnWrapper'>
         <Button
         size='small'
         onClick={()=>{
@@ -95,7 +112,7 @@ top:0;
         endIcon={<HeartFilled></HeartFilled>}
       >
         Donate
-      </Button>
+      </Button></div>
       <div className='menu'>
           <MenuFoldOutlined onClick={()=>{
               setOpen(true)
@@ -134,7 +151,11 @@ top:0;
           <ListItemText primary="About Us" />
         </ListItem>
 
-        <ListItem button>
+        <ListItem onClick={()=>{
+            props.history.push('contact')
+            setOpen(false)
+
+        }} button>
           <ListItemIcon>
             <CalendarToday></CalendarToday>
           </ListItemIcon>
@@ -142,14 +163,22 @@ top:0;
         </ListItem>
 
 
-        <ListItem button>
+        <ListItem onClick={()=>{
+            props.history.push('whatwedo')
+            setOpen(false)
+
+        }} button>
           <ListItemIcon>
             <Image></Image>
           </ListItemIcon>
-          <ListItemText primary="Gallery" />
+          <ListItemText primary="What We Do" />
         </ListItem>
 
-        <ListItem button>
+        <ListItem onClick={()=>{
+            props.history.push('careers')
+            setOpen(false)
+
+        }} button>
           <ListItemIcon>
             <Assignment></Assignment>
           </ListItemIcon>

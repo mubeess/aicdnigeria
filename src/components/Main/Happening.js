@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 const StyledHap=styled.div`
-   width:100%;
+   width:80%;
    background-color:transparent;
    position:relative;
    box-shadow:0px 0px 2px rgba(0,0,0,0.5);
-   margin:auto;
+   margin:20px;
    h1{
        font-size:150px;
        opacity: 0.2;
@@ -16,16 +16,20 @@ const StyledHap=styled.div`
        right: 0;
        font-weight:bold;
        color:rgba(0,0,0,0.7);
+       font-size: 20px;
 
    }
+  
 `;
 export default function Happening(props) {
     return (
        <StyledHap>
+      <div className='format'>
       <h1>0{props.num}</h1>
       <p>
       {props.content}
       </p>
+      </div>
        </StyledHap>
     )
 }

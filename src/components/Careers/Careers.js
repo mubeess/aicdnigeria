@@ -26,7 +26,7 @@ margin-top: 85px;
 }
 
 `;
-export default function About() {
+export default function Careers() {
 const [open,setOpen]=useState(false)
   const handleOpen = () => {
     setOpen(true);
@@ -42,17 +42,14 @@ useEffect(() => {
             <Nav handleOpen={handleOpen}></Nav>
             <Donate open={open} handleClose={handleClose}></Donate>
             <div className='jumbo'>
-            <h2>ABOUT US</h2>
+            <h2>Careers</h2>
             </div>
             <div className='main'>
-                <Typography style={{textAlign:'justify',marginRight:'20px',marginLeft:'20px'}} variant='body1'>
-                The AFRICA INITIATIVE FOR CHILDREN WITH DISABILITIES is a 
-                civil association regulated by private law, without economic 
-                interest or political affiliation, without discrimination in 
-                terms of race, sex, social condition, religious beliefs, with 
-                autonomy regarding its administration, finances and assets, which 
-                will be governed through the provisions of its Statute and the applicable
-                 legislation of the association.
+                <Typography align='center' variant='h4'>
+                No Available Position Yet !!!
+                </Typography>
+                <Typography align='center' variant='h4'>
+                🚫🚫🚫🚫🚫🚫🚫🚫
                 </Typography>
             </div>
         </StyledAbout>
