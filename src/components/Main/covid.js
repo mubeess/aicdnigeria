@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const StyledCovid=styled.div`
 min-height:80vh;
-width:80%;
+width:90%;
 margin-left:auto;
 margin-right:auto;
 background:url('covid.jpg');

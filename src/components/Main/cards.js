@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography'
 import styled from 'styled-components'
 const StyledCard=styled.div`
 display:grid;
-width:80%;
+width:100%;
 margin-left:auto;
 margin-right:auto;
 grid-template-columns:1fr;
@@ -21,7 +21,10 @@ margin-bottom: 30px;
 `;
 const useStyles = makeStyles({
     root: {
-      marginTop:20
+      marginTop:20,
+      width:'90%',
+      marginLeft:20,
+      marginRight:20
     },
     media: {
       height: 300,

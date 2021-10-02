@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 const StyledHap=styled.div`
-   width:80%;
+   width:90%;
    background-color:transparent;
    position:relative;
    box-shadow:0px 0px 2px rgba(0,0,0,0.5);
    margin:20px;
-   min-height: 200px;
+   min-height: 150px;
    h1{
        font-size:150px;
        opacity: 0.2;
@@ -18,10 +18,11 @@ const StyledHap=styled.div`
        top:0;
        font-weight:bold;
        color:rgba(0,0,0,0.7);
-       font-size: 15px;
+       font-size: 20px;
        text-align: justify;
        margin-right: 20px;
        margin-left: 20px;
+       font-weight: lighter;
 
    }
   

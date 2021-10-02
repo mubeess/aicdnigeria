@@ -27,7 +27,7 @@ align-items: center;
 background-color: white;
 margin-left: auto;
 margin-right: auto;
-margin-top: 25%;
+margin-top:10px;
 margin-bottom: auto;
 border-radius: 10px;
 overflow-y: scroll;
@@ -296,7 +296,7 @@ export default function Main() {
            <h4>Nigeria crisis briefing</h4> 
            <p>
            Northern Nigeria has been plagued by persistent conflicts in recent years 
-           which have claimed over_____________lives Apart from the general impact of conflict, 
+           which have claimed over 300000 lives Apart from the general impact of conflict, 
            it has also contributed to an alarming increase in the number of persons with Disabilities
             (PWDs) and made all PWDs more vulnerable.Disability resulting from conflict related
              injuries is becoming more prevalent than those due to other causes, such as diseases, 
@@ -368,7 +368,35 @@ export default function Main() {
       >
       <StyledMod>
           <CloseCircleFilled onClick={handleClose} style={{marginLeft:'80%',marginTop:'20px'}}></CloseCircleFilled>
-          {
+          <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+          Kindly Donate<HeartFilled></HeartFilled></Typography>
+          <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+           Naira Account ₦
+          </Typography>
+         <ul>
+             <li>Account no : 1017676192</li>
+             <li> Name of Bank: Zenith Bank</li>
+             <li> Account name: Africa Initiative for child with Disabilities</li>
+             <li>  Type of account: Nigerian local Currency (Naira operating)</li>
+         </ul>
+
+         <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+           Dollar Account $
+          </Typography>
+         <ul>
+             <li>Account no : 5071552511</li>
+             <li> Name of Bank: Zenith Bank</li>
+             <li> Account name: Africa Initiative for child with Disabilities</li>
+             <li>  Type of account: Domiciliary account (USD)
+
+</li>
+         </ul>
+          
+         
+          
+         
+          
+          {/* {
               !paid&&(
                   <>
                    <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
@@ -410,8 +438,8 @@ export default function Main() {
                   
                   </>
               )
-          }
-     
+          } */}
+{/*      
       {
           paid&&(
               <div>
@@ -431,7 +459,7 @@ export default function Main() {
           }} variant='contained' color='primary' style={{marginLeft:'25%'}}>{'<<'}Back To Home</Button>
               </div>
           )
-      }
+      } */}
       </StyledMod>
       </Modal>
         </StyledMain>

@@ -14,7 +14,7 @@ align-items: center;
 background-color: white;
 margin-left: auto;
 margin-right: auto;
-margin-top: 25%;
+margin-top:10px;
 margin-bottom: auto;
 border-radius: 10px;
 overflow-y: scroll;
@@ -75,7 +75,30 @@ export default function Donate(props) {
              setPhone('')
              props.handleClose()
           }} style={{marginLeft:'80%',marginTop:'20px'}}></CloseCircleFilled>
-          {
+          <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+          Kindly Donate<HeartFilled></HeartFilled></Typography>
+          <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+           Naira Account ₦
+          </Typography>
+         <ul>
+             <li>Account no : 1017676192</li>
+             <li> Name of Bank: Zenith Bank</li>
+             <li> Account name: Africa Initiative for child with Disabilities</li>
+             <li>  Type of account: Nigerian local Currency (Naira operating)</li>
+         </ul>
+
+         <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
+           Dollar Account $
+          </Typography>
+         <ul>
+             <li>Account no : 5071552511</li>
+             <li> Name of Bank: Zenith Bank</li>
+             <li> Account name: Africa Initiative for child with Disabilities</li>
+             <li>  Type of account: Domiciliary account (USD)
+
+</li>
+         </ul>
+          {/* {
               !paid&&(
                   <>
                    <Typography style={{marginTop:'10px'}} align='center' gutterBottom variant="h6" component="h2">
@@ -138,7 +161,7 @@ export default function Donate(props) {
           }} variant='contained' color='primary' style={{marginLeft:'25%'}}>{'<<'}Back To Home</Button>
               </div>
           )
-      }
+      } */}
       </StyledMod>
       </Modal>
     )
